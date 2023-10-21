@@ -2,3 +2,5 @@ python-dotenv
 langchain
 PyPDF2
 faiss-cpu
+streamlit
+streamlit-extras
