@@ -23,7 +23,7 @@ with st.sidebar:
                 ''')
                 
     add_vertical_space(5)
-    st.write('made by me')
+    st.write('made by Kunal Bitey')
 
 
 def main():
