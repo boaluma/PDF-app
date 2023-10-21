@@ -6,8 +6,8 @@ from streamlit_extras.add_vertical_space import add_vertical_space
 from PyPDF2 import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.vectorstores import faiss
-from langchain.chat_models import ChatOpenAI
+from langchain.vectorstores import FAISS
+from langchain.llms import ChatOpenAI
 from langchain.chains.question_answering import load_qa_chain
 
 # sidebar
@@ -59,7 +59,7 @@ def main():
         else:
             # embeddings 
             embeddings = OpenAIEmbeddings()
-            Vectorstore = faiss.FAISS.from_texts(chunks, embeddings)
+            Vectorstore = FAISS.from_texts(chunks, embedding= embeddings)
             with open(f"{store_name}.pkl", "wb") as f:
                 pickle.dump(Vectorstore, f)
         
