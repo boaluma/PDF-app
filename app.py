@@ -7,7 +7,7 @@ from PyPDF2 import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
-from langchain.llms import ChatOpenAI
+from langchain.llms import OpenAI
 from langchain.chains.question_answering import load_qa_chain
 
 # sidebar
@@ -65,14 +65,13 @@ def main():
         
         # Accept query
         query = st.text_input("Enter the question regarding your PDF :")
-        st.write(query)
         
         if query:
-            docs = Vectorstore.similarity_search(query=query, k=3)
+            docs = VectorStore.similarity_search(query=query, k=5)
             
-            llm = ChatOpenAI()
+            llm = OpenAI()
             chain = load_qa_chain(llm= llm, chain_type="stuff")
-            response = chain.run(input_documents=docs, question= query)
+            response = chain.run(input_documents=docs, question=query)
             st.write(response)
   
     
