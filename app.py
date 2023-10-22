@@ -28,7 +28,7 @@ with st.sidebar:
     add_vertical_space(5)
     st.write('Made with by Kunal Bitey')
  
-os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"] 
+os.environ["OPENAI_API_KEY"] = st.secrets["key"] 
 load_dotenv()
 
  
