@@ -32,7 +32,7 @@ load_dotenv()
  
 def main():
     st.header("PDF Q&A app")
-    os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+    # os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
  
  
     # upload a PDF file
