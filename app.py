@@ -78,9 +78,6 @@ def main():
             llm = OpenAI()
             chain = load_qa_chain(llm=llm, chain_type="stuff")
             response = chain.run(input_documents=docs, question=query)
-            # with get_openai_callback() as cb:
-            #     response = chain.run(input_documents=docs, question=query)
-            #     print(cb)
             st.write(response)
  
 if __name__ == '__main__':
