@@ -11,7 +11,7 @@ from langchain.vectorstores import FAISS
 from langchain.llms import OpenAI 
 from langchain.chains.question_answering import load_qa_chain
 from langchain.callbacks import get_openai_callback
-os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+
  
 # Sidebar contents
 with st.sidebar:
@@ -28,7 +28,9 @@ with st.sidebar:
     add_vertical_space(5)
     st.write('Made with by Kunal Bitey')
  
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"] 
 load_dotenv()
+
  
 def main():
     st.header("PDF Q&A app")
