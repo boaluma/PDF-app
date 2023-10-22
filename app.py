@@ -11,7 +11,7 @@ from langchain.vectorstores import FAISS
 from langchain.llms import OpenAI 
 from langchain.chains.question_answering import load_qa_chain
 from langchain.callbacks import get_openai_callback
-
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
  
 # Sidebar contents
 with st.sidebar:
@@ -32,7 +32,7 @@ load_dotenv()
  
 def main():
     st.header("PDF Q&A app")
-    # os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+    
  
  
     # upload a PDF file
